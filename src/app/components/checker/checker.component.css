@@ -1,0 +1,11 @@
+.transparentInput{
+  background: transparent;
+  color: #fff;
+  border:none;
+  text-align: right;
+}
+
+.done{
+  vertical-align: middle;
+  height: 400px;
+}

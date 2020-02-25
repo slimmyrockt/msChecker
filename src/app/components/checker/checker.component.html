@@ -1,0 +1,48 @@
+<div class="container text-center pt-3">
+  <h1>Millisecond checker</h1>
+
+  <div class="row pt-3">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="formControlRange">Millisecond 1: <input [(ngModel)]="msSelect1"  [size]="4" class="transparentInput" max="130">ms</label>
+        <input [(ngModel)]="msSelect1" type="range" class="p-4 form-control-range" min="1" max="2000" step="1" id="formControlRange">
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="formControlRange2">Millisecond 2: <input [(ngModel)]="msSelect2"  [size]="4" class="transparentInput" max="130">ms</label>
+        <input [(ngModel)]="msSelect2" type="range" class="p-4 form-control-range" min="1" max="2000" step="1" id="formControlRange2">
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="row" *ngIf="!start">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <button (click)="startCountdown()" type="button" class="btn btn-sm btn-light w-100">Start</button>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="row" *ngIf="start">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <button (click)="resetCountdown()" type="button" class="btn btn-sm btn-info w-100">Reset</button>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="row" *ngIf="start">
+    <div class="col-2"></div>
+    <div class="col-4 text-light done m-1" [ngClass]="{'bg-success': select1}">
+      <div class="container-fluid bg-danger m-0 p-0 w-100 h-100" *ngIf="!select1">1</div>
+    </div>
+    <div class="col-4 text-light done m-1" [ngClass]="{'bg-success': select2}">
+      <div class="container-fluid bg-danger m-0 p-0 w-100 h-100" *ngIf="!select2">2</div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+</div>
